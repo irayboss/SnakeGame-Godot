@@ -1,0 +1,38 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://cfpim5le5bkdt"
+path="res://.godot/imported/font_acme7_wide.ttf-60a638c1d6a6078a91541e039b00221b.fontdata"
+
+[deps]
+
+source_file="res://fonts/font_acme7_wide.ttf"
+dest_files=["res://.godot/imported/font_acme7_wide.ttf-60a638c1d6a6078a91541e039b00221b.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=10.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}
