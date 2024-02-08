@@ -1,3 +1,4 @@
+class_name Snake
 extends Node2D
 
 var head := Minisnake.new() 
@@ -8,10 +9,14 @@ var next_direction := Vector2.RIGHT
 
 var tween_move: Tween
 
+signal hit(minisnake_hit: Minisnake)
+
 func _ready():
 	head.size = Game.CELL_SIZE 
 	head.color = Colors.BLUE_DARK
-	minisnakes.push_front(head)
+	minisnakes.push_front(head) 
+	
+	hit.connect(_on_hit)
 	
 	tween_move = create_tween().set_loops()
 	tween_move.tween_callback(move).set_delay(0.075)
@@ -46,12 +51,19 @@ func move() -> void:
 	var next_position = head.curr_position + (curr_direction * Game.CELL_SIZE)
 	next_position.x = Utils.repeat(next_position.x, Game.GRID_SIZE.x)
 	next_position.y = Utils.repeat(next_position.y, Game.GRID_SIZE.y)
-	print(next_position)
+
 	head.curr_position = next_position 
 	
 	# move other minisnakes
 	for i in range(1, minisnakes.size()):
 		minisnakes[i].curr_position = minisnakes[i-1].prev_position
+	
+	# check collision between head and minisnakes
+	for i in range(1, minisnakes.size()):
+		if head.get_rect().intersects(minisnakes[i].get_rect()):
+			hit.emit(minisnakes[i]) 
+			Game.gameover.emit()
+			break
 
 func grow() -> void:
 	var minisnake := Minisnake.new()
@@ -61,3 +73,13 @@ func grow() -> void:
 	minisnake.color = Colors.BLUE
 	minisnake.size = Game.CELL_SIZE
 	minisnakes.push_back(minisnake)
+	
+	Game.score += 1
+
+func _on_hit(mini: Minisnake) -> void:
+	tween_move.kill()
+	
+	await get_tree().process_frame
+	
+	for minisnake in minisnakes:
+		minisnake.go_to_prev_position()

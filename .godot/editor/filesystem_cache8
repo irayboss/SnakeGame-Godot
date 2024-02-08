@@ -1,0 +1,15 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1707391389
+icon.png::CompressedTexture2D::4286362986582300994::1707324141::1707391280::1::::<><>::
+icon.svg::CompressedTexture2D::426468350960578349::1707323744::1707391280::1::::<><>::
+::res://fonts/::1707391280
+font_acme7_wide.ttf::FontFile::5155260010271486793::1707324176::1707391280::1::::<><>::
+::res://scenes/::1707391290
+snake.gd::GDScript::-1::1707329854::0::1::::<>Node2D<>::
+world.tscn::PackedScene::8784104999848220821::1707391290::0::1::::<><>::res://scripts/grid.gd<>res://scenes/snake.gd
+::res://scripts/::1707329691
+colors.gd::GDScript::-1::1707325011::0::1::::Colors<>RefCounted<>::
+game.gd::GDScript::-1::1707326738::0::1::::<>Node<>::
+grid.gd::GDScript::-1::1707326117::0::1::::<>Node2D<>::
+minisnake.gd::GDScript::-1::1707329691::0::1::::Minisnake<>RefCounted<>::
+utils.gd::GDScript::-1::1707328705::0::1::::<>Node<>::

@@ -8,6 +8,11 @@ var color := Color()
 func get_rect() -> Rect2:
 	return Rect2(curr_position , size)
 
+
+func go_to_prev_position() -> void:
+	curr_position = prev_position
+	
+
 func _set_curr_position(new_position: Vector2) -> void:
 	prev_position = curr_position
 	curr_position = new_position

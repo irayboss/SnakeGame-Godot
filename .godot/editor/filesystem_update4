@@ -1,0 +1,10 @@
+res://scenes/world.tscn
+res://scripts/food.gd
+res://scenes/snake.gd
+res://scripts/spawner_food.gd
+res://scripts/minisnake.gd
+res://scripts/hit_spotter.gd
+res://scripts/game.gd
+res://scripts/lbl_score.gd
+res://scripts/cntr_gameover.gd
+res://scripts/colors.gd
